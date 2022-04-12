@@ -1,0 +1,19 @@
+.MultipleChoice {
+  width: 100%;
+}
+.select {
+  min-height: 200px;
+  border: transparent;
+  background-color: transparent;
+  overflow-y: auto;
+  width: 400px;
+}
+.select:focus {
+  border: transparent;
+  outline: transparent;
+}
+.select option {
+  padding: 5px 10px;
+  /* background-color: tomato; */
+  background-color: white;
+}

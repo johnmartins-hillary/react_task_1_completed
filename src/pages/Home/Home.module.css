@@ -1,0 +1,39 @@
+.home {
+ 
+
+  
+}
+.quizContainer{
+background-color: #99673817;
+    width: 800px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 0 30px;
+    border-radius: 15px;
+
+}
+.HomeButtonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+}
+.prevBtns{
+    border: transparent;
+    background-color: tomato;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+.nextBtns{
+    border: transparent;
+    background-color: tomato;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin-left: auto;
+}
