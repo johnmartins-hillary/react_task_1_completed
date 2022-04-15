@@ -5,11 +5,14 @@ import Description from "../../components/Description/Description";
 import LongText from "../../components/LongText/LongText";
 import MultipleChoice from "../../components/MultipleChoice/MultipleChoice";
 import MultipleSelectionChoice from "../../components/MultipleSelectionChoice/MultipleSelectionChoice";
-import ShortAnswer from "../../components/ShortAnswer/ShortAnswer";
+import ShortAnswer from "../../components/Admin/ShortAnswer/ShortAnswer";
 import TrueFalse from "../../components/TrueFalse/TrueFalse";
+// import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { currentQuestion, setCurrentQuestion, handleSubmit } = useAuth();
+  // const navigate = useNavigate();
+
   //   increasing quiz set no by 1 after clicking
   const handleNext = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -58,7 +61,7 @@ const Home = () => {
           </button>
         ) : (
           <button
-            onClick={handleSubmit}
+            onClick={handleSubmit()}
             className={styles.nextBtns}
             style={{ backgroundColor: "skyblue", color: "black" }}
           >

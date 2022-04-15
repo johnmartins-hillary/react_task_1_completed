@@ -1,0 +1,17 @@
+.text_continer {
+  width: 70%;
+  height: 50%;
+  background-color: #99673817;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+}

@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./pages/Home/Home";
 import AuthProvider from "./context/AuthProvider";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -11,7 +10,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/admin" element={<Admin />}></Route>
+            <Route path="/admin/*" element={<Admin />}></Route>
           </Routes>
         </Router>
       </AuthProvider>

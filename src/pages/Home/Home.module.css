@@ -1,39 +1,47 @@
 .home {
- 
-
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
-.quizContainer{
-background-color: #99673817;
-    width: 800px ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    padding: 0 30px;
-    border-radius: 15px;
-
+.quizContainer {
+  position: relative;
+  background-color: #99673817;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 50%;
+  padding: 0 30px;
+  border-radius: 15px;
 }
-.HomeButtonContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 80px;
+.quizContainer input {
+  width: 100%;
 }
-.prevBtns{
-    border: transparent;
-    background-color: tomato;
-    padding: 5px 15px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
+.HomeButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80px;
+  width: 50%;
 }
-.nextBtns{
-    border: transparent;
-    background-color: tomato;
-    padding: 5px 15px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    margin-left: auto;
+.prevBtns {
+  border: transparent;
+  background-color: tomato;
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+.nextBtns {
+  border: transparent;
+  background-color: tomato;
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  margin-left: auto;
 }
