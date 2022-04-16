@@ -20,6 +20,7 @@ const NewQuestion = () => {
       correct_answer: 1,
     };
     dispatch(addQuestion(newQuestion));
+    console.log(newQuestion);
   };
 
   return (

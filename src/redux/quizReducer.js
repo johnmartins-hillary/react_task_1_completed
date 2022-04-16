@@ -8,11 +8,23 @@ const quizSlice = createSlice({
   },
   reducers: {
     addQuestion: (state, action) => {
-      // state.currentQuiz = state.currentQuiz.push(action.payload);
-      console.log(state.currentQuiz.push(action.payload));
+      state.currentQuiz = [...state?.currentQuiz, action.payload];
     },
-    editQuestion: (state, action) => {},
-    deleteQuestion: (state, action) => {},
+    editQuestion: (state, action) => {
+      console.log(action.payload);
+      state.currentQuiz = state.currentQuiz.map((item) => {
+        if (item?.id == action.payload.id) {
+          return action.payload;
+        }
+        return item;
+      });
+    },
+    deleteQuestion: (state, action) => {
+      console.log(state.currentQuiz);
+      state.currentQuiz = state.currentQuiz.filter(
+        (item) => item.id !== action.payload
+      );
+    },
   },
 });
 

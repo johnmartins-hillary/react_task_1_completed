@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import Question from "../Question/Question";
 import { useSelector } from "react-redux";
 
-
 const Sidebar = () => {
   const navigate = useNavigate();
   const { currentQuiz } = useSelector((state) => state.quiz);
+
 
   return (
     <div className="sidebar_container">
@@ -20,8 +20,13 @@ const Sidebar = () => {
           +
         </button>
         <div className="new_question">
-          {currentQuiz.map((q, index) => (
-            <Question navigate={navigate} type={q.type} id={q.id} key={index} />
+          {currentQuiz?.map((q, index) => (
+            <Question
+              navigate={navigate}
+              type={q?.type}
+              id={q?.id}
+              key={index}
+            />
           ))}
         </div>
       </div>

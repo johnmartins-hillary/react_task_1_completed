@@ -5,12 +5,14 @@ import Description from "../../components/Description/Description";
 import LongText from "../../components/LongText/LongText";
 import MultipleChoice from "../../components/MultipleChoice/MultipleChoice";
 import MultipleSelectionChoice from "../../components/MultipleSelectionChoice/MultipleSelectionChoice";
-import ShortAnswer from "../../components/Admin/ShortAnswer/ShortAnswer";
 import TrueFalse from "../../components/TrueFalse/TrueFalse";
+import ShortAnswer from "../../components/ShortAnswer/ShortAnswer";
+// import { useSelector } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { currentQuestion, setCurrentQuestion, handleSubmit } = useAuth();
+  // const { currentQuiz } = useSelector((state) => state.quiz);
   // const navigate = useNavigate();
 
   //   increasing quiz set no by 1 after clicking

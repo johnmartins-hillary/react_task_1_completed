@@ -1,4 +1,4 @@
-.text_container {
+.multiple_choice {
   width: 70%;
   height: 50%;
   background-color: #99673817;
@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-.text_container textArea {
+.multiple_choice input {
   width: 100%;
   outline: none;
   border-radius: 5px;
@@ -16,7 +16,7 @@
   margin-top: 10px;
 }
 
-.text_container button {
+.multiple_choice button {
   border: transparent;
   background-color: tomato;
   padding: 5px 15px;
@@ -25,4 +25,21 @@
   font-weight: bold;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.answer_text_collection {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.answer_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.answer_list button {
+  margin-top: 0px;
+  margin-left: 10px;
 }

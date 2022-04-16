@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { editQuestion } from "../../../redux/quizReducer";
 import "./LongText.css";
 
 const LongText = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { currentQuiz } = useSelector((state) => state.quiz);
+
+  const [longText, setLongText] = useState({
+    id: id,
+    text: "",
+  });
+  console.log(currentQuiz);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let text = currentQuiz.find((n) => n?.id == longText?.id);
+    text = { ...text, question: longText.text };
+    console.log(text);
+    dispatch(editQuestion(text));
+  };
   return (
-    <div className="text_container ">
+    <form className="text_container " onSubmit={(e) => handleSubmit(e)}>
       <h4>Question Text</h4>
-      <input placeholder="long text" required type="text" />
-    </div>
+      <textarea
+        placeholder="long text"
+        required
+        cols="50"
+        rows="4"
+        onChange={(e) => setLongText({ ...longText, text: e.target.value })}
+      />
+      <button type="submit">submit</button>
+    </form>
   );
 };
 
