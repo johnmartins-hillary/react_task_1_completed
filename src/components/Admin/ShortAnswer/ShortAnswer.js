@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { editQuestion } from "../../../redux/quizReducer";
 
-import "./ShortText.css";
+import "./ShortAnswer.css";
 
 const ShortAnswer = (props) => {
   const { id } = useParams();
@@ -17,8 +17,8 @@ const ShortAnswer = (props) => {
   console.log(currentQuiz);
   const handleSubmit = (e) => {
     e.preventDefault();
-    let text = currentQuiz.find((n) => n?.id == shortText?.id);
-    text = { ...text, question: shortText.text };
+    let text = currentQuiz.find((n) => Number(n?.id) === Number(shortText?.id));
+    text = { ...text, question: shortText.text, type: "short_answer" };
     console.log(text);
     dispatch(editQuestion(text));
   };

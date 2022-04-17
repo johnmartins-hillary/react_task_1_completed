@@ -16,9 +16,8 @@ const LongText = () => {
   console.log(currentQuiz);
   const handleSubmit = (e) => {
     e.preventDefault();
-    let text = currentQuiz.find((n) => n?.id == longText?.id);
-    text = { ...text, question: longText.text };
-    console.log(text);
+    let text = currentQuiz.find((n) => Number(n?.id) === Number(longText?.id));
+    text = { ...text, question: longText.text, type: "long_text" };
     dispatch(editQuestion(text));
   };
   return (

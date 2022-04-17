@@ -1,4 +1,3 @@
-import { quiz } from "../../main";
 import useAuth from "../../hooks/useAuth";
 import styles from "./Home.module.css";
 import Description from "../../components/Description/Description";
@@ -7,13 +6,13 @@ import MultipleChoice from "../../components/MultipleChoice/MultipleChoice";
 import MultipleSelectionChoice from "../../components/MultipleSelectionChoice/MultipleSelectionChoice";
 import TrueFalse from "../../components/TrueFalse/TrueFalse";
 import ShortAnswer from "../../components/ShortAnswer/ShortAnswer";
-// import { useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { currentQuestion, setCurrentQuestion, handleSubmit } = useAuth();
-  // const { currentQuiz } = useSelector((state) => state.quiz);
-  // const navigate = useNavigate();
+  const { currentQuiz } = useSelector((state) => state.quiz);
+  const navigate = useNavigate();
 
   //   increasing quiz set no by 1 after clicking
   const handleNext = () => {
@@ -27,28 +26,28 @@ const Home = () => {
 
   //   matching quiz type with components to render
   const renderElement = () => {
-    if (quiz[currentQuestion].type === "short_answer") {
-      return <ShortAnswer quiz={quiz[currentQuestion]}></ShortAnswer>;
-    } else if (quiz[currentQuestion].type === "multiple_choice") {
-      return <MultipleChoice quiz={quiz[currentQuestion]}></MultipleChoice>;
-    } else if (quiz[currentQuestion].type === "multiple_selection_choice") {
+    if (currentQuiz[currentQuestion].type === "short_answer") {
+      return <ShortAnswer quiz={currentQuiz[currentQuestion]}></ShortAnswer>;
+    } else if (currentQuiz[currentQuestion].type === "multiple_choice") {
+      return <MultipleChoice quiz={currentQuiz[currentQuestion]}></MultipleChoice>;
+    } else if (currentQuiz[currentQuestion].type === "multiple_selection_choice") {
       return (
         <MultipleSelectionChoice
-          quiz={quiz[currentQuestion]}
+          quiz={currentQuiz[currentQuestion]}
         ></MultipleSelectionChoice>
       );
-    } else if (quiz[currentQuestion].type === "long_text") {
-      return <LongText quiz={quiz[currentQuestion]}></LongText>;
-    } else if (quiz[currentQuestion].type === "description") {
-      return <Description quiz={quiz[currentQuestion]}></Description>;
-    } else if (quiz[currentQuestion].type === "true_false") {
-      return <TrueFalse quiz={quiz[currentQuestion]}></TrueFalse>;
+    } else if (currentQuiz[currentQuestion].type === "long_text") {
+      return <LongText quiz={currentQuiz[currentQuestion]}></LongText>;
+    } else if (currentQuiz[currentQuestion].type === "description") {
+      return <Description quiz={currentQuiz[currentQuestion]}></Description>;
+    } else if (currentQuiz[currentQuestion].type === "true_false") {
+      return <TrueFalse quiz={currentQuiz[currentQuestion]}></TrueFalse>;
     }
   };
 
   return (
     <div className={styles.home}>
-      {/* redering the matched quiz with type and curent number */}
+      {/* rendering the matched quiz with type and current number */}
       <div className={styles.quizContainer}>{renderElement()}</div>
 
       <div className={styles.HomeButtonContainer}>
@@ -57,13 +56,13 @@ const Home = () => {
             PREV
           </button>
         )}
-        {currentQuestion < quiz.length - 1 ? (
+        {currentQuestion < currentQuiz.length - 1 ? (
           <button onClick={handleNext} className={styles.nextBtns}>
             NEXT
           </button>
         ) : (
           <button
-            onClick={handleSubmit()}
+            onClick={() => handleSubmit(navigate)}
             className={styles.nextBtns}
             style={{ backgroundColor: "skyblue", color: "black" }}
           >

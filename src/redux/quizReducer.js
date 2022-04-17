@@ -13,7 +13,7 @@ const quizSlice = createSlice({
     editQuestion: (state, action) => {
       console.log(action.payload);
       state.currentQuiz = state.currentQuiz.map((item) => {
-        if (item?.id == action.payload.id) {
+        if (item?.id === action.payload.id) {
           return action.payload;
         }
         return item;

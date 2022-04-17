@@ -14,10 +14,11 @@ const useQuizes = () => {
 
   // ------------------------------
   // allAnswers  holds the correct answers to all questions
-  const handleSubmit = () => {
+  const handleSubmit = (navigate) => {
     const allAnswers = answeredQuiz.map((answer) => answer.correct_answer);
-    console.log(allAnswers);
-    // navigate("/admin");
+    setAnsweredQuiz(allAnswers)
+    setCurrentQuestion(0)
+    navigate("/result");
   };
   // ------------------------------
 
