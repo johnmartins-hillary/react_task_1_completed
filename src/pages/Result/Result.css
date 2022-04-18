@@ -18,7 +18,8 @@
 .question{
     display: flex;
     flex-direction: column;
-padding-right: 20px;    
+    padding-right: 20px; 
+    align-items: flex-start   
 }
 
 
