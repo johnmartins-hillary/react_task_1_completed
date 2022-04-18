@@ -24,6 +24,7 @@ const Sidebar = () => {
             <Question
               navigate={navigate}
               type={q?.type}
+              qst={q?.question}
               id={q?.id}
               key={index}
             />

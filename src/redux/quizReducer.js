@@ -25,7 +25,7 @@ const quizSlice = createSlice({
         (item) => item.id !== action.payload
       );
     },
-  },
+  }, 
 });
 
 export const { addQuestion, editQuestion, deleteQuestion } = quizSlice.actions;

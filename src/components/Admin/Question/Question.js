@@ -3,7 +3,7 @@ import "./Question.css";
 import { useDispatch } from "react-redux";
 import { deleteQuestion } from "../../../redux/quizReducer";
 
-const Question = ({ navigate, type, id }) => {
+const Question = ({ navigate, type, id, qst }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
@@ -26,7 +26,12 @@ const Question = ({ navigate, type, id }) => {
   return (
     <div className="question_container">
       <div className="" onClick={() => handleNavigate(type, id)}>
-        <p className="question_title">Question {id}</p>
+        {qst ? (
+          <p className="question_title">{qst}</p>
+        ) : (
+          <p className="question_title">Question {id}</p>
+        )}
+
         <div className="question_type_name">{type}</div>
       </div>
       <div className="right">

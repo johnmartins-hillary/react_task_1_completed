@@ -36,6 +36,7 @@ const MultipleChoice = () => {
       return {
         id: index + 1,
         answer: answer.answerText,
+        correct_answer: 0
       };
     });
     console.log(answerList);
